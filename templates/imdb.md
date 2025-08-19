@@ -31,7 +31,7 @@ directors: <% tp.user.imdb('directorsQuotesListLink', tp, doc) %>
 
 
 
-## Image
+## Poster
 
 ![](<% tp.user.imdb('image', tp, doc) %>)
 
