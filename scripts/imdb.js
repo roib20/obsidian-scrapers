@@ -176,13 +176,12 @@ function getDuration(json) {
 }
 
 function getType(json) {
-  return json?.["@type"]?.toLowerCase().replace(/tv/i, "") || "";
+  return json?.["@type"]?.replace(/tv/i, "") || "";
 }
 
 function getGenres(json) {
   if (!json?.genre) return "";
   return JSON.stringify(json.genre)
-    .toLowerCase()
     .replace(/","/g, ", ")
     .replace(/\["/g, "")
     .replace(/\"]/, "");
