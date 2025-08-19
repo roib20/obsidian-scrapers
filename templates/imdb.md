@@ -7,20 +7,25 @@ let doc = new DOMParser().parseFromString(page,"text/html")
 let title = await tp.user.imdb('title', tp, doc)
 -%>
 url: "<% tp.user.imdb('url', tp, doc) %>"
+my-watch-dates:
+ - <% tp.date.now("YYYY-MM-DD") %>
+my-rating: 0
 imdb-rating: <% tp.user.imdb('imdbRating', tp, doc) %>
-content-rating: <% tp.user.imdb('contentRating', tp, doc) %>
 duration: <% tp.user.imdb('duration', tp, doc) %>
 year: <% tp.user.imdb('published', tp, doc) %> 
 type: <% tp.user.imdb('type', tp, doc) %>
 genres: [<% tp.user.imdb('genresQuotes', tp, doc) %>]
 keywords: [<% tp.user.imdb('keywordsQuotes', tp, doc) %>]
-directors: [<% tp.user.imdb('directorsQuotes', tp, doc) %>]
-creators: [<% tp.user.imdb('creatorsQuotes', tp, doc) %>]
 cast: [<% tp.user.imdb('starsQuotes', tp, doc) %>]
 countries: [<% tp.user.imdb('countriesQuotes', tp, doc) %>]
+creators: [<% tp.user.imdb('creatorsQuotes', tp, doc) %>]
+directors: [<% tp.user.imdb('directorsQuotes', tp, doc) %>]
 ---
+# <% title %> (<% await tp.user.imdb('published', tp, doc) %>)
 
-# <% title %>
+## My Review
+
+
 
 ## Image
 
@@ -32,54 +37,30 @@ countries: [<% tp.user.imdb('countriesQuotes', tp, doc) %>]
 
 ## Genres
 
-- <% tp.user.imdb('genres', tp, doc) %>
-- Links: <% tp.user.imdb('genresLinks', tp, doc) %>
-
-List:
-<% tp.user.imdb('genresList', tp, doc) %>
+<% tp.user.imdb('genresLinks', tp, doc) %>
 
 ## Keywords
 
-- <% tp.user.imdb('keywords', tp, doc) %>
-- Links: <% tp.user.imdb('keywordsLinks', tp, doc) %>
-
-List:
-<% tp.user.imdb('keywordsList', tp, doc) %>
-
-## Directors
-
-- <% tp.user.imdb('directors', tp, doc) %>
-- Links: <% tp.user.imdb('directorsLinks', tp, doc) %>
-
-List:
-<% tp.user.imdb('directorsList', tp, doc) %>
-
-## Creators
-
-- <% tp.user.imdb('creators', tp, doc) %>
-- Links: <% tp.user.imdb('creatorsLinks', tp, doc) %>
-
-List:
-<% tp.user.imdb('creatorsList', tp, doc) %>
-
-## Countries
-
-- <% tp.user.imdb('countries', tp, doc) %>
-- Links: <% tp.user.imdb('countriesLinks', tp, doc) %>
-
-List:
-<% tp.user.imdb('countriesList', tp, doc) %>
+<% tp.user.imdb('keywordsLinks', tp, doc) %>
 
 ## Cast
 
-- <% tp.user.imdb('stars', tp, doc) %>
-- Links: <% tp.user.imdb('starsLinks', tp, doc) %>
+<% tp.user.imdb('starsLinks', tp, doc) %>
 
-List:
-<% tp.user.imdb('starsList', tp, doc) %>
+## Countries
 
-<%* 
-let filename = title
+<% tp.user.imdb('countriesLinks', tp, doc) %>
+
+## Creators
+
+<% tp.user.imdb('creatorsLinks', tp, doc) %>
+
+## Directors
+
+<% tp.user.imdb('directorsLinks', tp, doc) %>
+
+<%*
+let filename = title + " (" + await tp.user.imdb('published', tp, doc) + ")"
 // Remove prohibited characters
 filename = filename.replace(/[/\:*?<>|""]/g, "")
 // Rename a note
