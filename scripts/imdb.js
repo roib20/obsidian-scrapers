@@ -43,6 +43,9 @@ async function imdb(value, tp, doc) {
     case "keywordsW":
     case "keywordsLinks":
       return formatLink(getKeywords(json), "keywords");
+    case "keywordsQLL":
+    case "keywordsQuotesListLink":
+      return formatQuoteListLink(getKeywords(json), "keywords");
     case "directors":
       return safeReturn(getDirectors(json), "directors");
     case "directorsQ":
@@ -54,6 +57,9 @@ async function imdb(value, tp, doc) {
     case "directorsW":
     case "directorsLinks":
       return formatLink(getDirectors(json), "directors");
+    case "directorsQLL":
+    case "directorsQuotesListLink":
+      return formatQuoteListLink(getDirectors(json), "directors");
     case "creators":
       return safeReturn(getCreators(json), "creators");
     case "creatorsQ":
@@ -65,6 +71,9 @@ async function imdb(value, tp, doc) {
     case "creatorsW":
     case "creatorsLinks":
       return formatLink(getCreators(json), "creators");
+    case "creatorsQLL":
+    case "creatorsQuotesListLink":
+      return formatQuoteListLink(getCreators(json), "creators");
     case "duration":
       return safeReturn(getDuration(json), "duration");
     case "description":
@@ -84,6 +93,9 @@ async function imdb(value, tp, doc) {
     case "genresW":
     case "genresLinks":
       return formatLink(getGenres(json), "genres");
+    case "genresQLL":
+    case "genresQuotesListLink":
+      return formatQuoteListLink(getGenres(json), "genres");
     case "stars":
       return safeReturn(getStars(json), "stars");
     case "starsQ":
@@ -95,6 +107,9 @@ async function imdb(value, tp, doc) {
     case "starsW":
     case "starsLinks":
       return formatLink(getStars(json), "stars");
+    case "starsQLL":
+    case "starsQuotesListLink":
+      return formatQuoteListLink(getStars(json), "stars");
     case "imdbRating":
       return safeReturn(json?.aggregateRating?.ratingValue, "imdbRating")
     case "countries":
@@ -108,6 +123,9 @@ async function imdb(value, tp, doc) {
     case "countriesW":
     case "countriesLinks":
       return formatLink(getCountries(doc), "countries");
+    case "countriesQLL":
+    case "countriesQuotesListLink":
+      return formatQuoteListLink(getCountries(doc), "countries");
     case "url":
       return safeReturn(getUrl(json), "url");
     default:
@@ -209,6 +227,11 @@ function formatList(value, name) {
 function formatLink(value, name) {
   if (!value) logParsingError(name);
   return value ? `[[${value.replace(/, /g, "]], [[")}]]` : "";
+}
+
+function formatQuoteListLink(value, name) {
+  if (!value) logParsingError(name);
+  return value ? `["[[${value.replace(/, /g, ']]", "[[')}]]"]` : "";
 }
 
 function logParsingError(variable) {
