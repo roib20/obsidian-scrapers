@@ -8,7 +8,7 @@ let title = await tp.user.imdb('title', tp, doc)
 -%>
 url: "<% tp.user.imdb('url', tp, doc) %>"
 my-watch-dates:
- - <% tp.date.now("YYYY-MM-DD") %>
+ - "[[<% tp.date.now("YYYY-MM-DD") %>]]"
 my-rating: 0
 imdb-rating: <% tp.user.imdb('imdbRating', tp, doc) %>
 duration: <% tp.user.imdb('duration', tp, doc) %>
