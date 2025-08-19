@@ -23,6 +23,10 @@ directors: <% tp.user.imdb('directorsQuotesListLink', tp, doc) %>
 ---
 # <% title %> (<% await tp.user.imdb('published', tp, doc) %>)
 
+## Description
+
+<% tp.user.imdb('description', tp, doc) %>
+
 ## My Review
 
 
@@ -30,10 +34,6 @@ directors: <% tp.user.imdb('directorsQuotesListLink', tp, doc) %>
 ## Image
 
 ![](<% tp.user.imdb('image', tp, doc) %>)
-
-## Description
-
-<% tp.user.imdb('description', tp, doc) %>
 
 <%*
 let filename = title + " (" + await tp.user.imdb('published', tp, doc) + ")"
