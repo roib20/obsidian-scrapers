@@ -7,7 +7,7 @@ let doc = new DOMParser().parseFromString(page,"text/html")
 let title = await tp.user.imdb('title', tp, doc)
 -%>
 url: "<% tp.user.imdb('url', tp, doc) %>"
-my-watch-dates:
+watched:
  - "[[<% tp.date.now("YYYY-MM-DD") %>]]"
 my-rating: 0
 imdb-rating: <% tp.user.imdb('imdbRating', tp, doc) %>
