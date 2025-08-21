@@ -63,17 +63,17 @@ https://user-images.githubusercontent.com/71596800/193448137-3a4d4489-cbc6-4108-
 | `<% tp.user.imdb('title', tp) %>`         | Get title                                                                                 |
 | `<% tp.user.imdb('image', tp) %>`         | Get poster link                                                                           |
 | `<% tp.user.imdb('published', tp) %>`     | Get publish date                                                                          |
-| `<% tp.user.imdb('keywords', tp) %>`      | Get keywords (alternative formats: `keywordsList`, `keywordsQuotes`, `keywordsLinks`)     |
-| `<% tp.user.imdb('directors', tp) %>`     | Get directors (alternative formats: `directorsList`, `directorsQuotes`, `directorsLinks`) |
-| `<% tp.user.imdb('creators', tp) %>`      | Get creators (alternative formats: `creatorsList`, `creatorsQuotes`, `creatorsLinks`)     |
+| `<% tp.user.imdb('keywords', tp) %>`      | Get keywords (alternative formats: `keywordsList`, `keywordsQuotes`, `keywordsLinks`, `keywordsQuotesListLink`)     |
+| `<% tp.user.imdb('directors', tp) %>`     | Get directors (alternative formats: `directorsList`, `directorsQuotes`, `directorsLinks`, `directorsQuotesListLink`) |
+| `<% tp.user.imdb('creators', tp) %>`      | Get creators (alternative formats: `creatorsList`, `creatorsQuotes`, `creatorsLinks`, `creatorsQuotesListLink`)     |
 | `<% tp.user.imdb('duration', tp) %>`      | Get duration                                                                              |
 | `<% tp.user.imdb('description', tp) %>`   | Get description                                                                           |
 | `<% tp.user.imdb('type', tp) %>`          | Get type (movie/series)                                                                   |
 | `<% tp.user.imdb('contentRating', tp) %>` | Get content rating                                                                        |
-| `<% tp.user.imdb('genres', tp) %>`        | Get genres (alternative formats: `genresList`, `genresQuotes`, `genresLinks`)             |
-| `<% tp.user.imdb('stars', tp) %>`         | Get cast (alternative formats: `starsList`, `starsQuotes`, `starsLinks`)                  |
+| `<% tp.user.imdb('genres', tp) %>`        | Get genres (alternative formats: `genresList`, `genresQuotes`, `genresLinks`, `genresQuotesListLink`)             |
+| `<% tp.user.imdb('stars', tp) %>`         | Get cast (alternative formats: `starsList`, `starsQuotes`, `starsLinks`, `starsQuotesListLink`)                  |
 | `<% tp.user.imdb('imdbRating', tp) %>`    | Get IMDb rating                                                                           |
-| `<% tp.user.imdb('countries', tp) %>`     | Get countries (alternative formats: `countriesList`, `countriesQuotes`, `countriesLinks`) |
+| `<% tp.user.imdb('countries', tp) %>`     | Get countries (alternative formats: `countriesList`, `countriesQuotes`, `countriesLinks`, `countriesQuotesListLink`) |
 | `<% tp.user.imdb('url', tp) %>`           | Get url                                                                                   |
 
 ### [Letterboxd](https://letterboxd.com/)
