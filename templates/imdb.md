@@ -20,6 +20,7 @@ cast: <% tp.user.imdb('starsQuotesListLink', tp, doc) %>
 countries: <% tp.user.imdb('countriesQuotesListLink', tp, doc) %>
 creators: <% tp.user.imdb('creatorsQuotesListLink', tp, doc) %>
 directors: <% tp.user.imdb('directorsQuotesListLink', tp, doc) %>
+poster: "<% tp.user.imdb('image', tp, doc) %>)"
 ---
 # <% title %> (<% await tp.user.imdb('published', tp, doc) %>)
 
@@ -33,7 +34,7 @@ directors: <% tp.user.imdb('directorsQuotesListLink', tp, doc) %>
 
 ## Poster
 
-![](<% tp.user.imdb('image', tp, doc) %>)
+![’<% title %>’ Poster](<% tp.user.imdb('image', tp, doc) %>)
 
 <%*
 let filename = title + " (" + await tp.user.imdb('published', tp, doc) + ")"
