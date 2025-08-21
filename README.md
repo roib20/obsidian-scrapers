@@ -6,7 +6,7 @@ https://user-images.githubusercontent.com/71596800/193448137-3a4d4489-cbc6-4108-
 
 ## Installation
 
-1. [Download](https://github.com/basilioss/obsidian-scrapers/archive/refs/heads/main.zip) and unzip the files/folders.
+1. [Download](https://github.com/roib20/obsidian-scrapers/archive/refs/heads/main.zip) and unzip the files/folders.
 2. Copy `scripts` and `templates` folder to your vault (notes) folder.
 3. Install Templater via the Community Plugins tab within Obsidian. Open Templater options in settings under `Community plugins` section.
 4. Set `Template folder location` to downloaded `templates` folder.
