@@ -13,6 +13,7 @@ pages: <% tp.user.goodreads('pageCount', tp, doc) %>
 ratings: <% tp.user.goodreads('rating', tp, doc) %>
 authors: [<% tp.user.goodreads('authorsQuotes', tp) %>]
 genres: [<% tp.user.goodreads('genresQuotes', tp, doc) %>]
+cover: "<% tp.user.goodreads('cover', tp, doc) %>"
 ---
 
 # <% title %>

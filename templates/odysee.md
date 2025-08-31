@@ -12,6 +12,7 @@ url: "<% tp.user.odysee('url', tp, doc) %>"
 content-url: "<% tp.user.odysee('contentUrl', tp, doc) %>"
 duration: <% tp.user.odysee('duration', tp, doc) %>
 keywords: [<% tp.user.odysee('keywordsQ', tp, doc) %>]
+cover: "<% tp.user.odysee('thumbnail', tp, doc) %>"
 ---
 
 # <% title %>

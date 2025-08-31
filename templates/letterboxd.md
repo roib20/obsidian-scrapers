@@ -21,6 +21,7 @@ countries: [<% tp.user.letterboxd('countriesQuotes', tp, doc) %>]
 languages: [<% tp.user.letterboxd('languagesQuotes', tp, doc) %>]
 writers: [<% tp.user.letterboxd('writersQuotes', tp, doc) %>]
 cast: [<% tp.user.letterboxd('castShortQuotes', tp, doc) %>]
+cover: "<% tp.user.letterboxd('image', tp, doc) %>"
 ---
 
 # <% tp.user.letterboxd('title', tp, doc) %>

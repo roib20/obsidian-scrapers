@@ -12,6 +12,7 @@ url: "<% tp.user.youtube('url', tp, doc) %>"
 duration: <% tp.user.youtube('duration', tp, doc) %>
 id: <% tp.user.youtube('id', tp, doc) %>
 keywords: [<% tp.user.youtube('keywordsQuotes', tp, doc) %>]
+cover: "<% tp.user.youtube('thumbnail', tp, doc) %>"
 ---
 
 # <% title %>
