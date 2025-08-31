@@ -11,15 +11,23 @@ published: <% tp.user.youtube('published', tp, doc) %>
 url: "<% tp.user.youtube('url', tp, doc) %>"
 duration: <% tp.user.youtube('duration', tp, doc) %>
 id: <% tp.user.youtube('id', tp, doc) %>
-keywords: <% tp.user.youtube('keywordsQuotesListLink', tp, doc) %>
-cover: "<% tp.user.youtube('thumbnail', tp, doc) %>"
+keywords: [<% tp.user.youtube('keywordsQuotes', tp, doc) %>]
 ---
 
 # <% title %>
 
 ## Thumbnail
 
-!['<% title %>' Thumbnail](<% tp.user.youtube('thumbnail', tp, doc) %>)
+![](<% tp.user.youtube('thumbnail', tp, doc) %>)
+
+## Keywords
+
+<% tp.user.youtube('keywords', tp, doc) %>
+
+Links: <% tp.user.youtube('keywordsLinks', tp, doc) %>
+
+List:
+<% tp.user.youtube('keywordsList', tp, doc) %>
 
 ## Description
 

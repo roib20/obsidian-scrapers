@@ -44,9 +44,6 @@ async function youtube(value, tp, doc) {
     case "keywordsW":
     case "keywordsLinks":
       return formatLink(getKeywords(doc), "keywords");
-    case "keywordsQLL":
-    case "keywordsQuotesListLink":
-      return formatQuoteListLink(getKeywords(doc), "keywords");
     case "duration":
       return safeReturn(getDuration(doc), "duration");
     case "description":
@@ -127,11 +124,6 @@ function safeReturn(result, name) {
 function formatQuote(value, name) {
   if (!value) logParsingError(name);
   return value ? `"${value.replace(/, /g, '", "')}"` : "";
-}
-
-function formatQuoteListLink(value, name) {
-  if (!value) logParsingError(name);
-  return value ? `["[[${value.replace(/, /g, ']]", "[[')}]]"]` : "";
 }
 
 function formatList(value, name) {
