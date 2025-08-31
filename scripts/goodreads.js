@@ -33,6 +33,9 @@ async function goodreads(value, tp, doc) {
     case "authorsW":
     case "authorsLinks":
       return formatLink(getAuthors(data), "authors");
+    case "authorsQLL":
+    case "authorsQuotesListLink":
+      return formatQuoteListLink(getAuthors(data), "authors");
     case "isbn":
       return safeReturn(data?.isbn, "isbn");
     case "published":
@@ -48,6 +51,9 @@ async function goodreads(value, tp, doc) {
     case "genresW":
     case "genresLinks":
       return formatLink(getGenres(doc), "genres");
+    case "genresQLL":
+    case "genresQuotesListLink":
+      return formatQuoteListLink(getGenres(doc), "genres");
     case "cover":
       return safeReturn(getCover(data), "cover");
     case "pageCount":
@@ -118,6 +124,11 @@ function safeReturn(result, name) {
 function formatQuote(value, name) {
   if (!value) logParsingError(name);
   return value ? `"${value.replace(/, /g, '", "')}"` : "";
+}
+
+function formatQuoteListLink(value, name) {
+  if (!value) logParsingError(name);
+  return value ? `["[[${value.replace(/, /g, ']]", "[[')}]]"]` : "";
 }
 
 function formatList(value, name) {

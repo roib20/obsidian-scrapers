@@ -11,8 +11,8 @@ isbn: <% tp.user.goodreads('isbn', tp, doc) %>
 published: <% tp.user.goodreads('published', tp, doc) %>
 pages: <% tp.user.goodreads('pageCount', tp, doc) %>
 ratings: <% tp.user.goodreads('rating', tp, doc) %>
-authors: [<% tp.user.goodreads('authorsQuotes', tp) %>]
-genres: [<% tp.user.goodreads('genresQuotes', tp, doc) %>]
+authors: <% tp.user.goodreads('authorsQuotesListLink', tp) %>
+genres: <% tp.user.goodreads('genresQuotesListLink', tp, doc) %>
 cover: "<% tp.user.goodreads('cover', tp, doc) %>"
 ---
 
@@ -23,24 +23,6 @@ cover: "<% tp.user.goodreads('cover', tp, doc) %>"
 ## Description
 
 <% tp.user.goodreads('description', tp, doc) %>
-
-## Authors
-
-<% tp.user.goodreads('authors', tp) %>
-
-Links: <% tp.user.goodreads('authorsLinks', tp) %>
-
-List:
-<% tp.user.goodreads('authorsList', tp) %>
-
-## Genres
-
-<% tp.user.goodreads('genres', tp) %>
-
-Links: <% tp.user.goodreads('genresLinks', tp) %>
-
-List:
-<% tp.user.goodreads('genresList', tp) %>
 
 <%* 
 let filename = title

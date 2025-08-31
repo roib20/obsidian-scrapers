@@ -43,6 +43,9 @@ async function letterboxd(value, tp, doc) {
     case "directorsW":
     case "directorsLinks":
       return formatLink(getDirectors(json), "directors");
+    case "directorsQLL":
+    case "directorsQuotesListLink":
+      return formatQuoteListLink(getDirectors(json), "directors");
     case "studios":
       return safeReturn(getStudios(json), "studios");
     case "studiosQ":
@@ -54,6 +57,9 @@ async function letterboxd(value, tp, doc) {
     case "studiosW":
     case "studiosLinks":
       return formatLink(getStudios(json), "studios");
+    case "studiosQLL":
+    case "studiosQuotesListLink":
+      return formatQuoteListLink(getStudios(json), "studios");
     case "published":
       return safeReturn(json?.releasedEvent?.[0]?.startDate, "published");
     case "url":
@@ -69,6 +75,9 @@ async function letterboxd(value, tp, doc) {
     case "castW":
     case "castLinks":
       return formatLink(getCast(json), "cast");
+    case "castQLL":
+    case "castQuotesListLink":
+      return formatQuoteListLink(getCast(json), "cast");
     case "castShort":
       return safeReturn(getCastShort(json), "castShort");
     case "castShortQ":
@@ -80,6 +89,9 @@ async function letterboxd(value, tp, doc) {
     case "castShortW":
     case "castShortLinks":
       return formatLink(getCastShort(json), "castShort");
+    case "castShortQLL":
+    case "castShortQuotesListLink":
+      return formatQuoteListLink(getCastShort(json), "castShort");
     case "title":
       return safeReturn(json?.name?.replace(/"/g, "”"), "title");
     case "genres":
@@ -93,6 +105,9 @@ async function letterboxd(value, tp, doc) {
     case "genresW":
     case "genresLinks":
       return formatLink(getGenres(json), "genres");
+    case "genresQLL":
+    case "genresQuotesListLink":
+      return formatQuoteListLink(getGenres(json), "genres");
     case "countries":
       return safeReturn(getCountries(json), "countries");
     case "countriesQ":
@@ -104,6 +119,9 @@ async function letterboxd(value, tp, doc) {
     case "countriesW":
     case "countriesLinks":
       return formatLink(getCountries(json), "countries");
+    case "countriesQLL":
+    case "countriesQuotesListLink":
+      return formatQuoteListLink(getCountries(json), "countries");
     case "rating":
       return safeReturn(json?.aggregateRating?.ratingValue, "rating");
     case "description":
@@ -123,6 +141,9 @@ async function letterboxd(value, tp, doc) {
     case "languagesW":
     case "languagesLinks":
       return formatLink(getLanguages(doc), "languages");
+    case "languagesQLL":
+    case "languagesQuotesListLink":
+      return formatQuoteListLink(getLanguages(doc), "languages");
     case "writers":
       return safeReturn(getWriters(doc), "writers");
     case "writersQ":
@@ -134,6 +155,9 @@ async function letterboxd(value, tp, doc) {
     case "writersW":
     case "writersLinks":
       return formatLink(getWriters(doc), "writers");
+    case "writersQLL":
+    case "writersQuotesListLink":
+      return formatQuoteListLink(getWriters(doc), "writers");
     case "runtime":
       return safeReturn(getRuntime(doc), "runtime");
     case "altTitle":
@@ -264,6 +288,11 @@ function safeReturn(result, name) {
 function formatQuote(value, name) {
   if (!value) logParsingError(name);
   return value ? `"${value.replace(/, /g, '", "')}"` : "";
+}
+
+function formatQuoteListLink(value, name) {
+  if (!value) logParsingError(name);
+  return value ? `["[[${value.replace(/, /g, ']]", "[[')}]]"]` : "";
 }
 
 function formatList(value, name) {

@@ -14,13 +14,13 @@ tmdb-url: <% tp.user.letterboxd('tmdbUrl', tp, doc) %>
 rating: <% tp.user.letterboxd('rating', tp, doc) %>
 runtime: <% tp.user.letterboxd('runtime', tp, doc) %>
 year: <% tp.user.letterboxd('published', tp, doc) %> 
-genres: [<% tp.user.letterboxd('genresQuotes', tp, doc) %>]
-directors: [<% tp.user.letterboxd('directorsQuotes', tp, doc) %>]
-studios: [<% tp.user.letterboxd('studiosQuotes', tp, doc) %>]
-countries: [<% tp.user.letterboxd('countriesQuotes', tp, doc) %>]
-languages: [<% tp.user.letterboxd('languagesQuotes', tp, doc) %>]
-writers: [<% tp.user.letterboxd('writersQuotes', tp, doc) %>]
-cast: [<% tp.user.letterboxd('castShortQuotes', tp, doc) %>]
+genres: <% tp.user.letterboxd('genresQuotesListLink', tp, doc) %>
+directors: <% tp.user.letterboxd('directorsQuotesListLink', tp, doc) %>
+studios: <% tp.user.letterboxd('studiosQuotesListLink', tp, doc) %>
+countries: <% tp.user.letterboxd('countriesQuotesListLink', tp, doc) %>
+languages: <% tp.user.letterboxd('languagesQuotesListLink', tp, doc) %>
+writers: <% tp.user.letterboxd('writersQuotesListLink', tp, doc) %>
+cast: <% tp.user.letterboxd('castShortQuotesListLink', tp, doc) %>
 cover: "<% tp.user.letterboxd('image', tp, doc) %>"
 ---
 
@@ -33,78 +33,6 @@ cover: "<% tp.user.letterboxd('image', tp, doc) %>"
 ## Description
 
 <% tp.user.letterboxd('description', tp, doc) %>
-
-## Genres
-
-<% tp.user.letterboxd('genres', tp, doc) %>
-
-Links: <% tp.user.letterboxd('genresLinks', tp, doc) %>
-
-List:
-<% tp.user.letterboxd('genresL', tp, doc) %>
-
-## Directors
-
-<% tp.user.letterboxd('directors', tp, doc) %>
-
-Links: <% tp.user.letterboxd('directorsLinks', tp, doc) %>
-
-List:
-<% tp.user.letterboxd('directorsList', tp, doc) %>
-
-## Studios
-
-<% tp.user.letterboxd('studios', tp, doc) %>
-
-Links: <% tp.user.letterboxd('studiosLinks', tp, doc) %>
-
-List:
-<% tp.user.letterboxd('studiosList', tp, doc) %>
-
-## Countries
-
-<% tp.user.letterboxd('countries', tp, doc) %>
-
-Links: <% tp.user.letterboxd('countriesLinks', tp, doc) %>
-
-List:
-<% tp.user.letterboxd('countriesList', tp, doc) %>
-
-## Languages
-
-<% tp.user.letterboxd('languages', tp, doc) %>
-
-Links: <% tp.user.letterboxd('languagesLinks', tp, doc) %>
-
-List:
-<% tp.user.letterboxd('languagesList', tp, doc) %>
-
-## Writers
-
-<% tp.user.letterboxd('writers', tp, doc) %>
-
-Links: <% tp.user.letterboxd('writersLinks', tp, doc) %>
-
-List:
-<% tp.user.letterboxd('writersList', tp, doc) %>
-
-## Cast (shortlist)
-
-<% tp.user.letterboxd('castShort', tp, doc) %>
-
-Links: <% tp.user.letterboxd('castShortLinks', tp, doc) %>
-
-List:
-<% tp.user.letterboxd('castShortList', tp, doc) %>
-
-## Cast
-
-<% tp.user.letterboxd('cast', tp, doc) %>
-
-Links: <% tp.user.letterboxd('castLinks', tp, doc) %>
-
-List:
-<% tp.user.letterboxd('castList', tp, doc) %>
 
 <%* 
 let filename = title
