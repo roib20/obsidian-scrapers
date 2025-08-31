@@ -18,7 +18,7 @@ keywords: [<% tp.user.youtube('keywordsQuotes', tp, doc) %>]
 
 ## Thumbnail
 
-![](<% tp.user.youtube('thumbnail', tp, doc) %>)
+!['<% title %>' Thumbnail](<% tp.user.youtube('thumbnail', tp, doc) %>)
 
 ## Keywords
 

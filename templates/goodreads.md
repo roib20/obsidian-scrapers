@@ -17,7 +17,7 @@ genres: [<% tp.user.goodreads('genresQuotes', tp, doc) %>]
 
 # <% title %>
 
-![](<% tp.user.goodreads('cover', tp, doc) %>)
+!['<% title %>' Cover](<% tp.user.goodreads('cover', tp, doc) %>)
 
 ## Description
 

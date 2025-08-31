@@ -18,7 +18,7 @@ keywords: [<% tp.user.odysee('keywordsQ', tp, doc) %>]
 
 ## Thumbnail
 
-![](<% tp.user.odysee('thumbnail', tp, doc) %>)
+!['<% title %>' Thumbnail](<% tp.user.odysee('thumbnail', tp, doc) %>)
 
 ## Keywords
 

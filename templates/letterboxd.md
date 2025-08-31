@@ -27,7 +27,7 @@ cast: [<% tp.user.letterboxd('castShortQuotes', tp, doc) %>]
 
 ## Image
 
-![](<% tp.user.letterboxd('image', tp, doc) %>)
+!['<% title %>' Poster](<% tp.user.letterboxd('image', tp, doc) %>)
 
 ## Description
 
