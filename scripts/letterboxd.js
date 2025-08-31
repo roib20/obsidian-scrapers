@@ -181,7 +181,7 @@ function getCastShort(json, n = 5) {
 }
 
 function getGenres(json) {
-  return Array.isArray(json?.genre) ? json.genre.join(", ").toLowerCase() : (json?.genre || "").toLowerCase();
+  return Array.isArray(json?.genre) ? json.genre.join(", ") : (json?.genre || "");
 }
 
 function getCountries(json) {
