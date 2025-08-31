@@ -26,7 +26,7 @@ cover: "<% tp.user.letterboxd('image', tp, doc) %>"
 
 # <% tp.user.letterboxd('title', tp, doc) %>
 
-## Image
+## Poster
 
 !['<% title %>' Poster](<% tp.user.letterboxd('image', tp, doc) %>)
 
