@@ -16,7 +16,7 @@ genres: <% tp.user.goodreads('genresQuotesListLink', tp, doc) %>
 cover: "<% tp.user.goodreads('cover', tp, doc) %>"
 ---
 
-# <% title %>
+# <% title %> - <% tp.user.goodreads('authors', tp) %>
 
 !['<% title %>' Cover](<% tp.user.goodreads('cover', tp, doc) %>)
 
@@ -25,7 +25,7 @@ cover: "<% tp.user.goodreads('cover', tp, doc) %>"
 <% tp.user.goodreads('description', tp, doc) %>
 
 <%* 
-let filename = title
+let filename = title + " - " + await tp.user.goodreads('authors', tp)
 // Remove prohibited characters
 filename = filename.replace(/[/\:*?<>|""]/g, "")
 // Rename a note
