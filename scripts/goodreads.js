@@ -127,8 +127,11 @@ function formatQuote(value, name) {
 }
 
 function formatQuoteListLink(value, name) {
-  if (!value) logParsingError(name);
-  return value ? `["[[${value.replace(/, /g, ']]", "[[')}]]"]` : "";
+  if (!value) {
+    logParsingError(name);
+    return "[]";
+  }
+  return `["[[${value.replace(/, /g, ']]", "[[')}]]"]`;
 }
 
 function formatList(value, name) {
