@@ -9,8 +9,12 @@ let altTitle = await tp.user.letterboxd('altTitle', tp, doc)
 -%>
 aliases: <%* altTitle == "" ? tR += '["' + title + '"]' : tR += '["' + title + '", "' + altTitle + '"]' %>
 url: "<% tp.user.letterboxd('url', tp, doc) %>"
+watched:
+ - ""
 imdb-url: <% tp.user.letterboxd('imdbUrl', tp, doc) %>
 tmdb-url: <% tp.user.letterboxd('tmdbUrl', tp, doc) %>
+type: ["[[Movie]]"]
+my-rating: 0
 rating: <% tp.user.letterboxd('rating', tp, doc) %>
 runtime: <% tp.user.letterboxd('runtime', tp, doc) %>
 year: <% tp.user.letterboxd('published', tp, doc) %> 
@@ -22,9 +26,14 @@ languages: <% tp.user.letterboxd('languagesQuotesListLink', tp, doc) %>
 writers: <% tp.user.letterboxd('writersQuotesListLink', tp, doc) %>
 cast: <% tp.user.letterboxd('castShortQuotesListLink', tp, doc) %>
 cover: "<% tp.user.letterboxd('image', tp, doc) %>"
+poster: "<% tp.user.letterboxd('image', tp, doc) %>"
 ---
 
 # <% tp.user.letterboxd('title', tp, doc) %>
+
+## My Review
+
+
 
 ## Poster
 
@@ -34,8 +43,8 @@ cover: "<% tp.user.letterboxd('image', tp, doc) %>"
 
 <% tp.user.letterboxd('description', tp, doc) %>
 
-<%* 
-let filename = title
+<%*
+let filename = title + " (" + await tp.user.letterboxd('published', tp, doc) + ")"
 // Remove prohibited characters
 filename = filename.replace(/[/\:*?<>|""]/g, "")
 // Rename a note
