@@ -9,8 +9,7 @@ let altTitle = await tp.user.letterboxd('altTitle', tp, doc)
 -%>
 aliases: <%* altTitle == "" ? tR += '["' + title + '"]' : tR += '["' + title + '", "' + altTitle + '"]' %>
 url: "<% tp.user.letterboxd('url', tp, doc) %>"
-watched:
- - ""
+watched: []
 imdb-url: <% tp.user.letterboxd('imdbUrl', tp, doc) %>
 tmdb-url: <% tp.user.letterboxd('tmdbUrl', tp, doc) %>
 type: ["[[Movie]]"]
